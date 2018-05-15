@@ -172,6 +172,7 @@
     }else if(sender.tag  == 3){
         DSExplainViewController * explainVC = [[DSExplainViewController alloc]init];
         explainVC.hidesBottomBarWhenPushed = YES;
+        explainVC.playGroupId = self.model.playGroupId;
         [self.viewController.navigationController pushViewController:explainVC animated:YES];
     }else{
         [self touzhuBtnAction];

@@ -9,8 +9,6 @@
 #import "DSTabbarItem.h"
 @interface DSTabbarItem()
 
-@property (strong, nonatomic) UIImageView * imageView;
-
 @property (strong, nonatomic) UILabel     * titleName;
 
 @property (strong, nonatomic) UIImage     * defaultimage;
@@ -21,20 +19,20 @@
 
 @implementation DSTabbarItem
 
-- (instancetype)initDefaultImage:(UIImage *)defaultimage SelecteImage:(UIImage *)selecteImage Title:(NSString *)title
+- (instancetype)initWithFrame:(CGRect)frame DefaultImage:(UIImage *)defaultimage SelecteImage:(UIImage *)selecteImage Title:(NSString *)title
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         _selecteImage = selecteImage;
         _defaultimage = defaultimage;
-        self.imageView = [[UIImageView alloc]init];
+        self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.width - 28)/2, 2, 28, 28)];
         [self.imageView setImage:_defaultimage];
         [self addSubview:self.imageView];
-        [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(@0);
-            make.height.and.width.equalTo(@28);
-            make.top.equalTo(@2);
-        }];
+//        [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerX.equalTo(@0);
+//            make.height.and.width.equalTo(@28);
+//            make.top.equalTo(@2);
+//        }];
         self.titleName = [[UILabel alloc]init];
         self.titleName.font = [UIFont systemFontOfSize:11];
         self.titleName.textColor = [UIColor grayColor];
@@ -45,7 +43,7 @@
             make.left.equalTo(@0);
             make.right.equalTo(@0);
             make.height.equalTo(@19);
-            make.top.equalTo(self.imageView.mas_bottom);
+            make.bottom.equalTo(@(0));
         }];
         _isSelect = NO;
     }

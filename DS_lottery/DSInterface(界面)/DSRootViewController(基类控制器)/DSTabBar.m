@@ -25,22 +25,26 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _item_1 = [[DSTabbarItem alloc]initDefaultImage:[UIImage imageNamed:@"toolbar_icon_xihu-dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_xihu-pre"] Title:@"首页"];
+        _item_1 = [[DSTabbarItem alloc]initWithFrame:CGRectMake(0, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT) DefaultImage:[UIImage imageNamed:@"toolbar_icon_xihu-dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_xihu-pre"] Title:@"首页"];
+        _item_1.imageView.frame = CGRectMake((_item_1.width - 24)/2, 5, 24, 24);
+        
+        _item_2 = [[DSTabbarItem alloc]initWithFrame:CGRectMake(_item_1.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT) DefaultImage:[UIImage imageNamed:@"toolbar_icon_xiaoguanjia-_dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_xiaoguanjia_pre"] Title:@"开奖公告"];
+        _item_2.imageView.frame = CGRectMake((_item_2.width - 21.5)/2, 4, 21.5, 26);
 
-        _item_2 = [[DSTabbarItem alloc]initDefaultImage:[UIImage imageNamed:@"toolbar_icon_xiaoguanjia-_dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_xiaoguanjia_pre"] Title:@"开奖公告"];
+        _item_3 = [[DSTabbarItem alloc]initWithFrame:CGRectMake(_item_2.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT) DefaultImage:[UIImage imageNamed:@"toolbar_icon_HI_dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_HI-_pre"] Title:@"彩票店"];
+        
+        _item_4 = [[DSTabbarItem alloc]initWithFrame:CGRectMake(_item_3.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT) DefaultImage:[UIImage imageNamed:@"label_bar_taopiaopiao_normal"] SelecteImage:[UIImage imageNamed:@"label_bar_taopiaopiao_selected"] Title:@"走势图"];
+        _item_4.imageView.frame = CGRectMake((_item_4.width - 24)/2, 5, 24, 23);
 
-        _item_3 = [[DSTabbarItem alloc]initDefaultImage:[UIImage imageNamed:@"toolbar_icon_HI_dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_HI-_pre"] Title:@"彩票店"];
-
-        _item_4 = [[DSTabbarItem alloc]initDefaultImage:[UIImage imageNamed:@"label_bar_taopiaopiao_normal"] SelecteImage:[UIImage imageNamed:@"label_bar_taopiaopiao_selected"] Title:@"走势图"];
-
-        _item_5 = [[DSTabbarItem alloc]initDefaultImage:[UIImage imageNamed:@"toolbar_icon_wode_dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_wode-_pre"] Title:@"个人中心"];
+        _item_5 = [[DSTabbarItem alloc]initWithFrame:CGRectMake(_item_4.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT) DefaultImage:[UIImage imageNamed:@"toolbar_icon_wode_dis"] SelecteImage:[UIImage imageNamed:@"toolbar_icon_wode-_pre"] Title:@"个人中心"];
+        _item_5.imageView.frame = CGRectMake((_item_5.width - 19)/2, 6, 19, 21.5);
         _item_1.isSelect = YES;
 
-        _item_1.frame = CGRectMake(0, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
-        _item_2.frame = CGRectMake(_item_1.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
-        _item_3.frame = CGRectMake(_item_2.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
-        _item_4.frame = CGRectMake(_item_3.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
-        _item_5.frame = CGRectMake(_item_4.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
+//        _item_1.frame = CGRectMake(0, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
+//        _item_2.frame = CGRectMake(_item_1.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
+//        _item_3.frame = CGRectMake(_item_2.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
+//        _item_4.frame = CGRectMake(_item_3.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
+//        _item_5.frame = CGRectMake(_item_4.right, 0, PhoneScreen_WIDTH/5,Tabbar_HEIGHT);
         [self addSubview:_item_1];
         [self addSubview:_item_2];
         [self addSubview:_item_3];

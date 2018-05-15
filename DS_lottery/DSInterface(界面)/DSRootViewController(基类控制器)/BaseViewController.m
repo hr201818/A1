@@ -64,7 +64,7 @@
     leftItem.width = leftItem.width > PhoneScreen_WIDTH/3 - 20? PhoneScreen_WIDTH/3 - 20:leftItem.width;
     leftItem.height = leftItem.height > 30 ? 30 : leftItem.height;
 
-    leftItem.frame = CGRectMake(15, (Navgationbar_HEIGHT - Statusbar_HEIGHT -leftItem.height)/2+Statusbar_HEIGHT , leftItem.width, leftItem.height);
+    leftItem.frame = CGRectMake(leftItem.left, (Navgationbar_HEIGHT - Statusbar_HEIGHT -leftItem.height)/2+Statusbar_HEIGHT , leftItem.width, leftItem.height);
 }
 
 /*右边的视图 */

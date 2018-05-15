@@ -95,7 +95,7 @@
 -(void)bannerDataLoad{
     NSMutableArray * imgArr = [[NSMutableArray alloc]init];
     [[DSAdvertSingleData initAdvertData].model.bannerList enumerateObjectsUsingBlock:^(DSHomeBannerModel * model, NSUInteger idx, BOOL * _Nonnull stop) {
-        [imgArr addObject:model.advertisUrl];
+        [imgArr addObject:model.imageUrl];
     }];
     self.cycleScrollView.imageURLStringsGroup = imgArr;
 
@@ -118,7 +118,7 @@
     if([[DSAdvertSingleData initAdvertData] searchAdvertLocationID:@"1"]!= nil){
         //导航栏左边的按钮 
         UIView * leftView = [[UIView alloc]init];
-        leftView.frame = CGRectMake(0, 0, 70, 30);
+        leftView.frame = CGRectMake(15, 0, 70, 30);
         [self navLeftItem:leftView];
         UIImageView * leftImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 5, 20, 20)];
         [leftImg setImage:[UIImage imageNamed:@"ico-index"]];
@@ -419,6 +419,7 @@
 /* 进入购彩 */
 -(void)leftBtnAction{
     DSHomeBannerModel * model = [[DSAdvertSingleData initAdvertData] searchAdvertLocationID:@"1"];
+    NSLog(@"%@",model.advertisUrl);
     [DSFuntionTool openUrl:model.advertisUrl];
 }
 

@@ -14,11 +14,10 @@
 @property (strong, nonatomic) UITableView     * tableView;
 @property (strong, nonatomic) SGPageTitleView * pageTitleView;
 @property (strong, nonatomic) NSArray         * titleArr;
-@property (copy, nonatomic)   NSString        * playGroupId;
 @property (strong, nonatomic) UILabel         * content;
 @property (strong, nonatomic) UIScrollView    * scrollView;
 @property (strong, nonatomic) DSGameRuleModel * model;
-
+@property (strong, nonatomic) UIWebView    * webView;
 @end
 
 @implementation DSExplainViewController
@@ -36,7 +35,7 @@
     [super viewDidLoad];
     self.title = @"玩法说明";
 
-    self.playGroupId = @"1";
+
 
     [self navLeftItem:[DSFuntionTool leftNavBackTarget:self Item:@selector(leftBackAction)]];
 
@@ -93,16 +92,25 @@
 //    [self.pageTitleView addSubview:line3];
 
 
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, Navgationbar_HEIGHT, self.view.width, PhoneScreen_HEIGHT - Navgationbar_HEIGHT - Tabbarbottom_HEIGHT)];
-    [self.view addSubview:self.scrollView];
+//    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, Navgationbar_HEIGHT, self.view.width, PhoneScreen_HEIGHT - Navgationbar_HEIGHT - Tabbarbottom_HEIGHT)];
+//    [self.view addSubview:self.scrollView];
+//
+//    self.content = [[UILabel alloc]initWithFrame:CGRectMake(15, 20, self.view.width - 25, 1000)];
+//    self.content.textColor = COLORFont83;
+//    self.content.numberOfLines = 0;
+//    self.content.font = [UIFont systemFontOfSize:15];
+//    [self.scrollView addSubview:self.content];
+//    [self.content sizeToFit];
+//    self.scrollView.contentSize = CGSizeMake(0, self.content.height + 20);
 
-    self.content = [[UILabel alloc]initWithFrame:CGRectMake(15, 20, self.view.width - 25, 1000)];
-    self.content.textColor = COLORFont83;
-    self.content.numberOfLines = 0;
-    self.content.font = [UIFont systemFontOfSize:15];
-    [self.scrollView addSubview:self.content];
-    [self.content sizeToFit];
-    self.scrollView.contentSize = CGSizeMake(0, self.content.height + 20);
+    self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, Navgationbar_HEIGHT, PhoneScreen_WIDTH, PhoneScreen_HEIGHT - Navgationbar_HEIGHT - Tabbarbottom_HEIGHT)];
+//    self.webView.delegate = self;
+//    self.webView.scalesPageToFit = YES;
+    self.webView.backgroundColor = [UIColor clearColor];
+    self.webView.scrollView.backgroundColor = [UIColor whiteColor];
+//    self.webView.scrollView.scrollEnabled = NO;
+    [self.view addSubview:self.webView];
+//    [self.webView.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 #pragma mark - 网络请求
@@ -119,10 +127,11 @@
         [strongSelf hidehud];
         if (SSUCCESS(result)) {
             strongSelf.model = [DSGameRuleModel yy_modelWithJSON:result];
-            strongSelf.content.frame = CGRectMake(15, 20, strongSelf.view.width - 25, 1000);
-            strongSelf.content.text = strongSelf.model.gameInstruction;
-            [strongSelf.content sizeToFit];
-            strongSelf.scrollView.contentSize = CGSizeMake(0, strongSelf.content.height + 20);
+            [strongSelf.webView loadHTMLString:strongSelf.model.gameInstruction baseURL:nil];
+//            strongSelf.content.frame = CGRectMake(15, 20, strongSelf.view.width - 25, 1000);
+//            strongSelf.content.text = strongSelf.model.gameInstruction;
+//            [strongSelf.content sizeToFit];
+//            strongSelf.scrollView.contentSize = CGSizeMake(0, strongSelf.content.height + 20);
         }
     } Failure:^(NSError *failure) {
         __strong typeof (weakSelf)strongSelf = weakSelf;

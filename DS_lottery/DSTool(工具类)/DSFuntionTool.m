@@ -12,8 +12,10 @@
 
 +(UIButton*)leftNavBackTarget:(id)target Item:(SEL)item {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 22, 22);
-    [button setImage:[UIImage imageNamed:@"cion_xinxi_fanhui.png"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(5, 0, 60, 44);
+    UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 6, 22, 22)];
+    [imageView setImage:[UIImage imageNamed:@"cion_xinxi_fanhui.png"]];
+    [button addSubview:imageView];
     [button addTarget:target action:item forControlEvents:UIControlEventTouchUpInside];
     return button;
 }
@@ -214,8 +216,10 @@
 }
 
 +(void)openUrl:(NSString *)url{
-    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    if([DSFuntionTool isBlankString:url] == NO){
+        if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        }
     }
 }
 @end

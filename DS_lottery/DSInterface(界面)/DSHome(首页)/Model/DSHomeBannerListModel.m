@@ -40,7 +40,7 @@
 }
 
 -(void)changeModel{
-    self.advertisUrl = [NSString stringWithFormat:@"%@%@.png?",IMGURL,self.advertisImgId];
+    self.imageUrl = [NSString stringWithFormat:@"%@%@.png?",IMGURL,self.advertisImgId];
 }
 
 - (NSUInteger)hash

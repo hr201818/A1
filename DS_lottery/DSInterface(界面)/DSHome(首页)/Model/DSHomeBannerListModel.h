@@ -28,6 +28,8 @@
 
 @property (copy, nonatomic) NSString * advertisUrl;
 
+@property (copy, nonatomic) NSString * imageUrl;
+
 @property (copy, nonatomic) NSString * advertisImgId;
 
 @property (copy, nonatomic) NSString * davertisImgData;

@@ -105,7 +105,7 @@
 -(void)setModel:(DSHomeBannerModel *)model{
     _model = model;
     self.star.text = [NSString stringWithFormat:@"    %@",model.advertisTitle];
-    [self.advertImg sd_setImageWithURL:[NSURL URLWithString:model.advertisUrl] placeholderImage:nil];
+    [self.advertImg sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:nil];
     self.userNumber.text = [NSString stringWithFormat:@"    %@位彩民关注过",model.advertisFollowNum];
 }
 

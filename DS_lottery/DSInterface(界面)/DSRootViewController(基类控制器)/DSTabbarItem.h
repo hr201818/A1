@@ -17,11 +17,11 @@
  * selecteImage 选中图片
  * title        标题
  */
-- (instancetype)initDefaultImage:(UIImage *)defaultimage SelecteImage:(UIImage *)selecteImage Title:(NSString *)title;
+- (instancetype)initWithFrame:(CGRect)frame DefaultImage:(UIImage *)defaultimage SelecteImage:(UIImage *)selecteImage Title:(NSString *)title;
 
 /* 是否选中,默认NO */
 @property (assign, nonatomic) BOOL isSelect;
 
-
+@property (strong, nonatomic) UIImageView * imageView;
 
 @end

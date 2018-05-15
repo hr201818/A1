@@ -36,6 +36,6 @@
 
 -(void)setModel:(DSHomeBannerModel *)model{
     _model = model;
-    [self.advertImg sd_setImageWithURL:[NSURL URLWithString:model.advertisUrl] placeholderImage:nil];
+    [self.advertImg sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:nil];
 }
 @end

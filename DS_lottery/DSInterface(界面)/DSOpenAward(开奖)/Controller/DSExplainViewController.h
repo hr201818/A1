@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface DSExplainViewController : BaseViewController
-
+@property (copy, nonatomic)   NSString        * playGroupId;
 @end
