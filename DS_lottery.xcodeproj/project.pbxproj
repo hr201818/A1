@@ -107,12 +107,6 @@
 		152EA44E208F419A00604254 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 152EA447208F419A00604254 /* MBProgressHUD.m */; };
 		152EA45120901F9A00604254 /* DSOpenAdvertTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 152EA45020901F9A00604254 /* DSOpenAdvertTableViewCell.m */; };
 		152EA45720904EF600604254 /* DSAppConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 152EA45620904EF600604254 /* DSAppConfigModel.m */; };
-		154E719D2099901E00F84779 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 154E71932099901E00F84779 /* UMSocialSDKResources.bundle */; };
-		154E719E2099901E00F84779 /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154E71942099901E00F84779 /* UShareUI.framework */; };
-		154E719F2099901E00F84779 /* UMShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154E71952099901E00F84779 /* UMShare.framework */; };
-		154E71A02099901E00F84779 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 154E71982099901E00F84779 /* libSocialSina.a */; };
-		154E71A12099901E00F84779 /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 154E719C2099901E00F84779 /* libSocialQQ.a */; };
-		154E71A32099908F00F84779 /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154E71A22099908F00F84779 /* UMCommon.framework */; };
 		154E71A52099911000F84779 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 154E71A42099911000F84779 /* libsqlite3.tbd */; };
 		154E71A9209997F900F84779 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1518E6D7208A041E000CD734 /* SystemConfiguration.framework */; };
 		154E71AE2099A6B600F84779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154E71AD2099A6B600F84779 /* Main.storyboard */; };
@@ -142,6 +136,10 @@
 		15F694C120A9342B00C6F46C /* DSChartListModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F694BD20A9342A00C6F46C /* DSChartListModal.m */; };
 		15F694C220A9342B00C6F46C /* DSChartModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F694BF20A9342B00C6F46C /* DSChartModal.m */; };
 		15F694C520A9346300C6F46C /* DSBaseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F694C420A9346300C6F46C /* DSBaseModal.m */; };
+		15F694C620ABDCA500C6F46C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154E71A62099911D00F84779 /* CoreGraphics.framework */; };
+		15F694C720ABDCC300C6F46C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1518E6D8208A0433000CD734 /* CoreTelephony.framework */; };
+		15F694C820ABDCD600C6F46C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1518E6D9208A044E000CD734 /* libc++.tbd */; };
+		15F694C920ABDCDE00C6F46C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1518E6DB208A045C000CD734 /* libz.tbd */; };
 		15FEE00D2084A38B0046DCEA /* DSUserCentreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FEE00C2084A38B0046DCEA /* DSUserCentreTableViewCell.m */; };
 		15FEE07E2085879E0046DCEA /* DSLotteryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FEE07D2085879E0046DCEA /* DSLotteryTableViewCell.m */; };
 		15FEE084208598730046DCEA /* DSHomeBannerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FEE083208598730046DCEA /* DSHomeBannerListModel.m */; };
@@ -379,14 +377,6 @@
 		152EA45020901F9A00604254 /* DSOpenAdvertTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSOpenAdvertTableViewCell.m; sourceTree = "<group>"; };
 		152EA45520904EF600604254 /* DSAppConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAppConfigModel.h; sourceTree = "<group>"; };
 		152EA45620904EF600604254 /* DSAppConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAppConfigModel.m; sourceTree = "<group>"; };
-		154E71932099901E00F84779 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
-		154E71942099901E00F84779 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
-		154E71952099901E00F84779 /* UMShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMShare.framework; sourceTree = "<group>"; };
-		154E71982099901E00F84779 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
-		154E71992099901E00F84779 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
-		154E719B2099901E00F84779 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
-		154E719C2099901E00F84779 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
-		154E71A22099908F00F84779 /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
 		154E71A42099911000F84779 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		154E71A62099911D00F84779 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		154E71A72099914300F84779 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -469,14 +459,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15F694C920ABDCDE00C6F46C /* libz.tbd in Frameworks */,
+				15F694C820ABDCD600C6F46C /* libc++.tbd in Frameworks */,
+				15F694C720ABDCC300C6F46C /* CoreTelephony.framework in Frameworks */,
+				15F694C620ABDCA500C6F46C /* CoreGraphics.framework in Frameworks */,
 				154E71A9209997F900F84779 /* SystemConfiguration.framework in Frameworks */,
-				154E71A12099901E00F84779 /* libSocialQQ.a in Frameworks */,
-				154E719E2099901E00F84779 /* UShareUI.framework in Frameworks */,
 				154E71A52099911000F84779 /* libsqlite3.tbd in Frameworks */,
-				154E719F2099901E00F84779 /* UMShare.framework in Frameworks */,
-				154E71A32099908F00F84779 /* UMCommon.framework in Frameworks */,
 				B2C0E08708032FEC31E81503 /* libPods-DS_lottery.a in Frameworks */,
-				154E71A02099901E00F84779 /* libSocialSina.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,7 +704,6 @@
 		152EA436208F419A00604254 /* DSThirdParty(手导第三方) */ = {
 			isa = PBXGroup;
 			children = (
-				154E71902099901E00F84779 /* share */,
 				151FED772091CBF300BD5CCE /* SDCycleScrollView */,
 				152EA437208F419A00604254 /* SGPagingView */,
 				152EA446208F419A00604254 /* MBProgressHUD */,
@@ -772,61 +760,6 @@
 				152EA447208F419A00604254 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		154E71902099901E00F84779 /* share */ = {
-			isa = PBXGroup;
-			children = (
-				154E71912099901E00F84779 /* share_ios_6.9.1 */,
-			);
-			path = share;
-			sourceTree = "<group>";
-		};
-		154E71912099901E00F84779 /* share_ios_6.9.1 */ = {
-			isa = PBXGroup;
-			children = (
-				154E71A22099908F00F84779 /* UMCommon.framework */,
-				154E71922099901E00F84779 /* UMSocialUI */,
-				154E71952099901E00F84779 /* UMShare.framework */,
-				154E71962099901E00F84779 /* SocialLibraries */,
-			);
-			path = share_ios_6.9.1;
-			sourceTree = "<group>";
-		};
-		154E71922099901E00F84779 /* UMSocialUI */ = {
-			isa = PBXGroup;
-			children = (
-				154E71932099901E00F84779 /* UMSocialSDKResources.bundle */,
-				154E71942099901E00F84779 /* UShareUI.framework */,
-			);
-			path = UMSocialUI;
-			sourceTree = "<group>";
-		};
-		154E71962099901E00F84779 /* SocialLibraries */ = {
-			isa = PBXGroup;
-			children = (
-				154E71972099901E00F84779 /* Sina */,
-				154E719A2099901E00F84779 /* QQ */,
-			);
-			path = SocialLibraries;
-			sourceTree = "<group>";
-		};
-		154E71972099901E00F84779 /* Sina */ = {
-			isa = PBXGroup;
-			children = (
-				154E71982099901E00F84779 /* libSocialSina.a */,
-				154E71992099901E00F84779 /* UMSocialSinaHandler.h */,
-			);
-			path = Sina;
-			sourceTree = "<group>";
-		};
-		154E719A2099901E00F84779 /* QQ */ = {
-			isa = PBXGroup;
-			children = (
-				154E719B2099901E00F84779 /* UMSocialQQHandler.h */,
-				154E719C2099901E00F84779 /* libSocialQQ.a */,
-			);
-			path = QQ;
 			sourceTree = "<group>";
 		};
 		15CFE1B12078CE8300A54D04 /* Controller */ = {
@@ -1331,7 +1264,6 @@
 				154E71AE2099A6B600F84779 /* Main.storyboard in Resources */,
 				15EB70CE20786CAB00FD0064 /* Assets.xcassets in Resources */,
 				15FEE0892085A92A0046DCEA /* homeLotteryList.plist in Resources */,
-				154E719D2099901E00F84779 /* UMSocialSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,11 +1293,23 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-DS_lottery/Pods-DS_lottery-resources.sh",
 				"${PODS_ROOT}/AMap3DMap-NO-IDFA/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/SocialLibraries/Twitter/TwitterKitResources.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/SocialLibraries/Twitter/TwitterShareExtensionUIResources.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

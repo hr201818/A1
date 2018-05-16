@@ -313,6 +313,8 @@
     self.noticeView.backgroundColor = [UIColor whiteColor];
     [self.tableViewHeader addSubview:self.noticeView];
 
+
+
     //公告栏
     self.noticeScrollView = [[SDCycleScrollView alloc]initWithFrame:CGRectMake(0, IOS_SiZESCALE(130), self.view.width, IOS_SiZESCALE(30))];
     [self.tableViewHeader addSubview:self.noticeScrollView];

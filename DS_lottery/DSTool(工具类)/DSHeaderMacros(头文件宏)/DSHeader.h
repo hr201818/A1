@@ -35,6 +35,7 @@
 #import "MBProgressHUD.h"
 #import <UMShare/UMShare.h>
 #import <UShareUI/UShareUI.h>
+#import <UMCommon/UMCommon.h>
 /* 网络数据类*/
 #import "DSNetWorkRequest.h"
 #import "DSApiInfoList.h"

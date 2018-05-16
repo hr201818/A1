@@ -9,5 +9,10 @@ pod 'MJRefresh', '~> 3.1.15.3'#下拉刷新
 pod 'AMapSearch-NO-IDFA', '~> 6.1.0'#高德搜索地图
 pod 'AMap3DMap-NO-IDFA', '~> 6.1.0'#高德3D地图
 pod 'SDAutoLayout', '~> 2.2.0'
+# 友盟SDK
+pod 'UMCShare', '~> 6.9.0'
+pod 'UMCCommonLog', '~> 1.0.0'
 
+# 集成微信(完整版14.4M)
+pod 'UMCShare/Social/WeChat'
 end

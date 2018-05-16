@@ -24,23 +24,67 @@
     self.window.rootViewController = tabbar;
 //    [self configUSharePlatforms];
 //    [self confitUShareSettings];
-    return YES; 
+    return YES;
 }
 
 - (void)confitUShareSettings
 {
+    //友盟Key
+    [UMConfigure initWithAppkey:youmengkey channel:@"App Store"];
     [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
+
 }
 - (void)configUSharePlatforms
 {
     /* 设置微信的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
 
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+    /*设置QQ平台的appID*/ 
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097" appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
 
     /* 设置新浪的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
      [[UMSocialManager defaultManager]  setPlaform:UMSocialPlatformType_VKontakte appKey:youmengkey appSecret:nil redirectURL:nil];
+
+    //定制分享界面
+    [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_WechatSession),
+                                               @(UMSocialPlatformType_WechatTimeLine),
+                                               @(UMSocialPlatformType_WechatFavorite),
+                                               @(UMSocialPlatformType_QQ),
+                                               @(UMSocialPlatformType_Qzone),
+                                               @(UMSocialPlatformType_Tim),
+                                               @(UMSocialPlatformType_Sina),
+                                               @(UMSocialPlatformType_TencentWb),
+                                               @(UMSocialPlatformType_AlipaySession),
+                                               @(UMSocialPlatformType_DingDing),
+                                               @(UMSocialPlatformType_Renren),
+                                               @(UMSocialPlatformType_Douban),
+                                               @(UMSocialPlatformType_Sms),
+                                               @(UMSocialPlatformType_Email),
+                                               @(UMSocialPlatformType_Facebook),
+                                               @(UMSocialPlatformType_FaceBookMessenger),
+                                               @(UMSocialPlatformType_Twitter),
+                                               @(UMSocialPlatformType_LaiWangSession),
+                                               @(UMSocialPlatformType_LaiWangTimeLine),
+                                               @(UMSocialPlatformType_YixinSession),
+                                               @(UMSocialPlatformType_YixinTimeLine),
+                                               @(UMSocialPlatformType_YixinFavorite),
+                                               @(UMSocialPlatformType_Instagram),
+                                               @(UMSocialPlatformType_Line),
+                                               @(UMSocialPlatformType_Whatsapp),
+                                               @(UMSocialPlatformType_Linkedin),
+                                               @(UMSocialPlatformType_Flickr),
+                                               @(UMSocialPlatformType_KakaoTalk),
+                                               @(UMSocialPlatformType_Pinterest),
+                                               @(UMSocialPlatformType_Tumblr),
+                                               @(UMSocialPlatformType_YouDaoNote),
+                                               @(UMSocialPlatformType_EverNote),
+                                               @(UMSocialPlatformType_GooglePlus),
+                                               @(UMSocialPlatformType_Pocket),
+                                               @(UMSocialPlatformType_DropBox),
+                                               @(UMSocialPlatformType_VKontakte),
+                                               @(UMSocialPlatformType_UserDefine_Begin+1),
+                                               ]];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
