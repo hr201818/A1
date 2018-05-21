@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<JPUSHRegisterDelegate>
 
 @end
 
@@ -18,15 +18,35 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.backgroundColor = [UIColor whiteColor];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+
+    //高德地图初始化
     [[AMapServices sharedServices] setEnableHTTPS:YES];
     [AMapServices sharedServices].apiKey = mapKey;
-    BaseTabBarController * tabbar = [[BaseTabBarController alloc]init];
-    self.window.rootViewController = tabbar;
+
+    //极光初始化
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    [JPUSHService setupWithOption:launchOptions appKey:jpushKey
+                          channel:@"App store"
+                 apsForProduction:[jpushEnvironment integerValue]
+            advertisingIdentifier:nil];
+
+//    //友盟分享初始化
 //    [self configUSharePlatforms];
 //    [self confitUShareSettings];
+
+    //根控制器初始化
+    BaseTabBarController * tabbar = [[BaseTabBarController alloc]init];
+    self.window.rootViewController = tabbar;
+
     return YES;
 }
 
+#pragma mark - 友盟分享
 - (void)confitUShareSettings
 {
     //友盟Key
@@ -37,53 +57,22 @@
 - (void)configUSharePlatforms
 {
     /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:wxAppKey appSecret:wxAppSecret redirectURL:@"http://mobile.umeng.com/social"];
 
     /*设置QQ平台的appID*/ 
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097" appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:qqAppKey appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
 
     /* 设置新浪的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:wbAppKey  appSecret:wbAppSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
      [[UMSocialManager defaultManager]  setPlaform:UMSocialPlatformType_VKontakte appKey:youmengkey appSecret:nil redirectURL:nil];
 
     //定制分享界面
     [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_WechatSession),
                                                @(UMSocialPlatformType_WechatTimeLine),
-                                               @(UMSocialPlatformType_WechatFavorite),
                                                @(UMSocialPlatformType_QQ),
                                                @(UMSocialPlatformType_Qzone),
                                                @(UMSocialPlatformType_Tim),
                                                @(UMSocialPlatformType_Sina),
-                                               @(UMSocialPlatformType_TencentWb),
-                                               @(UMSocialPlatformType_AlipaySession),
-                                               @(UMSocialPlatformType_DingDing),
-                                               @(UMSocialPlatformType_Renren),
-                                               @(UMSocialPlatformType_Douban),
-                                               @(UMSocialPlatformType_Sms),
-                                               @(UMSocialPlatformType_Email),
-                                               @(UMSocialPlatformType_Facebook),
-                                               @(UMSocialPlatformType_FaceBookMessenger),
-                                               @(UMSocialPlatformType_Twitter),
-                                               @(UMSocialPlatformType_LaiWangSession),
-                                               @(UMSocialPlatformType_LaiWangTimeLine),
-                                               @(UMSocialPlatformType_YixinSession),
-                                               @(UMSocialPlatformType_YixinTimeLine),
-                                               @(UMSocialPlatformType_YixinFavorite),
-                                               @(UMSocialPlatformType_Instagram),
-                                               @(UMSocialPlatformType_Line),
-                                               @(UMSocialPlatformType_Whatsapp),
-                                               @(UMSocialPlatformType_Linkedin),
-                                               @(UMSocialPlatformType_Flickr),
-                                               @(UMSocialPlatformType_KakaoTalk),
-                                               @(UMSocialPlatformType_Pinterest),
-                                               @(UMSocialPlatformType_Tumblr),
-                                               @(UMSocialPlatformType_YouDaoNote),
-                                               @(UMSocialPlatformType_EverNote),
-                                               @(UMSocialPlatformType_GooglePlus),
-                                               @(UMSocialPlatformType_Pocket),
-                                               @(UMSocialPlatformType_DropBox),
-                                               @(UMSocialPlatformType_VKontakte),
-                                               @(UMSocialPlatformType_UserDefine_Begin+1),
                                                ]];
 }
 
@@ -95,6 +84,47 @@
         // 其他如支付等SDK的回调
     }
     return result;
+}
+
+#pragma mark - 极光推送
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+//极光id获取失败
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //Optional
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+
+// iOS 10 Support
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    // Required
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
+    completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
+}
+
+// iOS 10 Support
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    // Required
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
+    completionHandler();  // 系统要求执行这个方法
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    // Required, iOS 7 Support
+    [JPUSHService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // Required,For systems with less than or equal to iOS6
+    [JPUSHService handleRemoteNotification:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

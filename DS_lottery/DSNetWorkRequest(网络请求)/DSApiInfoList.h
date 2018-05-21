@@ -9,10 +9,29 @@
 #ifndef DSApiInfoList_h
 #define DSApiInfoList_h
 
-//高德地图
+//--------------------------------------第三方环境配置-------------------------------------
+
+//高德地图key
 #define mapKey @"5f891701e760fbe071238428fa03a185"
-//友盟key
+
+//友盟平台key
 #define youmengkey @"5ae95360b27b0a5a9b000033"
+//微信分享key和Secret
+#define wxAppKey @"wxdc1e388c3822c80b"
+#define wxAppSecret @"3baf1193c85774b3fd9d18447d76cab0"
+//QQ平台分享key(QQ空间，QQ)
+#define qqAppKey @"1105821097"
+//新浪微博分享key和Secret
+#define wbAppKey @"3921700954"
+#define wbAppSecret @"04b48b094faeb16683c32669824ebdad"
+
+//极光key
+#define jpushKey @"123214"
+//极光使用环境 0为开发环境，1为生产环境
+#define jpushEnvironment @"0"
+
+
+//--------------------------------------App数据接口API----------------------------------------
 
 #define  URLHTTP  @"http://api.aa.77.nf/"           //服务器域名
 #define  COMPANYSHORTNAME  @"AA"                    //公司名称

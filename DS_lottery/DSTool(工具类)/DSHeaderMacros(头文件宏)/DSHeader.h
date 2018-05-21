@@ -36,10 +36,16 @@
 #import <UMShare/UMShare.h>
 #import <UShareUI/UShareUI.h>
 #import <UMCommon/UMCommon.h>
+#import "JPUSHService.h"
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+
 /* 网络数据类*/
 #import "DSNetWorkRequest.h"
 #import "DSApiInfoList.h"
 #import "DSAdvertSingleData.h"
 #import "SaveCachesFile.h"
+
 
 #endif /* DSHeader_h */
