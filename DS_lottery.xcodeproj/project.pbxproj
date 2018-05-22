@@ -1221,7 +1221,12 @@
 				TargetAttributes = {
 					15EB70C020786CAA00FD0064 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					15EB70D820786CAB00FD0064 = {
 						CreatedOnToolsVersion = 9.1;
@@ -1628,8 +1633,8 @@
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3TJ7A6A9FX;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GF2HX3TSQX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1651,10 +1656,10 @@
 					"$(PROJECT_DIR)/DS_lottery/DSThirdParty(手导第三方)/share/share_ios_6.9.1/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/DS_lottery/DSThirdParty(手导第三方)/share/share_ios_6.9.1/SocialLibraries/QQ",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dskeji.app;
+				PRODUCT_BUNDLE_IDENTIFIER = fuzhifei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cf8eb65f-5be3-475e-8142-50465a6d46a5";
-				PROVISIONING_PROFILE_SPECIFIER = dskejimiaosu;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
@@ -1669,8 +1674,8 @@
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3TJ7A6A9FX;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GF2HX3TSQX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1692,10 +1697,10 @@
 					"$(PROJECT_DIR)/DS_lottery/DSThirdParty(手导第三方)/share/share_ios_6.9.1/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/DS_lottery/DSThirdParty(手导第三方)/share/share_ios_6.9.1/SocialLibraries/QQ",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dskeji.app;
+				PRODUCT_BUNDLE_IDENTIFIER = fuzhifei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cf8eb65f-5be3-475e-8142-50465a6d46a5";
-				PROVISIONING_PROFILE_SPECIFIER = dskejimiaosu;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
